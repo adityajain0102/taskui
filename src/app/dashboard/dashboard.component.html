@@ -1,0 +1,31 @@
+
+
+<h1>Dashboard Page!</h1> 
+<p (click)="logout()"><a >Logout</a></p>
+
+
+
+
+<div class="row">
+    <div class="col-lg-6 p-0">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Hi {{currentUser.firstName}}!</h5>
+              <h6 class="card-subtitle mb-2 text-muted">You're logged in with Angular 6!!</h6>
+             
+            </div>
+          </div>
+          
+    </div>
+    <div class="col-lg-6 p-0" *ngIf="isAuditortole">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Audit Page </h5>
+              <h6 class="card-subtitle mb-2 text-muted">users</h6>
+              <a (click)="navigateToAuditPage()" class="card-link">click here</a>
+            </div>
+          </div>
+          
+    </div>
+
+</div>

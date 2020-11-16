@@ -1,0 +1,31 @@
+﻿<h1>Hi {{currentUser.firstName}}!</h1>
+<p>You're logged in with Angular 6!!</p>
+<h3>All registered users:</h3>
+
+<p><a [routerLink]="['/login']" (click)="clearStorage()">Logout</a></p>
+
+<table class="table ">
+    <thead class="thead-light">
+      <tr >
+        <th scope="col">Sno</th>
+        <th scope="col">username</th>
+        <th scope="col">Name</th>
+        <th scope="col">Last login</th>
+        <th scope="col">Last LoginIp</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users ; let i= index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{user?.username}}</td>
+        <td>{{user?.firstName}} {{user?.lastName}}</td>
+        <td>{{user?.loginTime  | date :'short'}}</td>
+        <td>{{user?.clientIp}}</td>
+
+      </tr>
+      <tr>
+        <button type="button" class="btn btn-primary" (click)="loadmoreusers()">load More users</button>
+
+      </tr>
+    </tbody>
+  </table>
